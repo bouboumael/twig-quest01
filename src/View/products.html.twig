@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% block startProducts %}
+<div class="startProducts">
     <p>
         {% for key, product in products %}
             {% if key < 3 %}
@@ -10,8 +10,8 @@
             {% endif %}
         {% endfor %}
     </p>
-{% endblock %}
-{% block finishProducts %}
+</div>
+<div class="finishProducts">
     <p>
         {% for key, product in products %}
             {% if key > 2 %}
@@ -19,7 +19,7 @@
             {% endif %}
         {% endfor %}
     </p>
-{% endblock %}
+</div>
 
     {{ dump(products) }}
 
