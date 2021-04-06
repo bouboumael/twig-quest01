@@ -23,4 +23,12 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
+
+    public function showProducts()
+    {
+        $products = ['product1', 'product2', 'product3', 'product4', 'product5'];
+        return $this->twig->render('products.html.twig', [
+            'products' => $products
+        ]);
+    }
 }

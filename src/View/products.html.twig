@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+{% block startProducts %}
+    <p>
+        {% for key, product in products %}
+            {% if key < 3 %}
+                {{ product }}
+            {% endif %}
+        {% endfor %}
+    </p>
+{% endblock %}
+{% block finishProducts %}
+    <p>
+        {% for key, product in products %}
+            {% if key > 2 %}
+                {{ product }}
+            {% endif %}
+        {% endfor %}
+    </p>
+{% endblock %}
+
+    {{ dump(products) }}
+
+{% endblock %}
+
