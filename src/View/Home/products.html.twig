@@ -2,24 +2,12 @@
 
 {% block content %}
 
-<div class="startProducts">
-    <p>
-        {% for key, product in products %}
-            {% if key < 3 %}
-                {{ product }}
-            {% endif %}
-        {% endfor %}
-    </p>
-</div>
-<div class="finishProducts">
-    <p>
-        {% for key, product in products %}
-            {% if key > 2 %}
-                {{ product }}
-            {% endif %}
-        {% endfor %}
-    </p>
-</div>
+{% for product in products %}
+    {{ product }}
+    {% if loop.index is divisible by(3) %}
+        <br/>
+    {% endif %}
+{% endfor %}
 
     {{ dump(products) }}
 
